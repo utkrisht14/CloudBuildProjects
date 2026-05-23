@@ -1,0 +1,67 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment and secret files
+.env
+.env.*
+*.env
+
+# Git files
+.git/
+.gitignore
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test and coverage files
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Build/package files
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files not needed inside image
+docker-compose.yml
+docker-compose.yaml
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Cache folders
+.cache/
+.mypy_cache/
+.ruff_cache/
+
+# Documentation files usually not needed in image
+README.md
+docs/

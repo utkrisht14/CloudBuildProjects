@@ -1,0 +1,31 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        echo "$$DOCKER_PASSWORD" | docker login --username="$$DOCKER_USERNAME" --password-stdin
+    secretEnv: ["DOCKER_USERNAME", "DOCKER_PASSWORD"]
+
+  - name: "gcr.io/cloud-builders/docker"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        docker build -t "$$DOCKER_USERNAME/cloudbuild-demo:latest" .
+    secretEnv: ["DOCKER_USERNAME"]
+
+  - name: "gcr.io/cloud-builders/docker"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        docker push "$$DOCKER_USERNAME/cloudbuild-demo:latest"
+    secretEnv: ["DOCKER_USERNAME"]
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/47420204627/secrets/USERNAME/versions/1
+      env: "DOCKER_USERNAME"
+    - versionName: projects/47420204627/secrets/PASSWORD/versions/1
+      env: "DOCKER_PASSWORD"
