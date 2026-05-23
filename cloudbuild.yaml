@@ -30,7 +30,7 @@ availableSecrets:
   secretManager:
     - versionName: projects/47420204627/secrets/USERNAME/versions/1
       env: "DOCKER_USERNAME"
-    - versionName: projects/47420204627/secrets/PASSWORD/versions/1
+    - versionName: projects/47420204627/secrets/PASSWORDversions/1
       env: "DOCKER_PASSWORD"
 
 options:
